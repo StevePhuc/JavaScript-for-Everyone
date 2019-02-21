@@ -14,14 +14,14 @@
 11. [Hoisting](#Hoisting)
 12. [Object](#object)
 13. [Class](#class)
-14. [Document Object Model](#dom)
+14. [Document Object Model](#document-object-model)
 15. [Functional Programming](#functional-programming)
 16. [Call Back and Higher Order Functions](#call-back-and-higher-order-functions)
 17. [Destructuring](#destructuring)
 19. [Rest and Spread](#rest-and-spread)
 20. [Document Object Model](#document-object-model)
 21. [Regular Expressions](#regular-expressions)
-22. [Local Storage](#localstorage)
+22. [Local Storage](#local-storage)
 23. [Cookies](#cookies)
 
 ## Introduction
@@ -88,19 +88,22 @@ Internal script can be written in the *head* or the *body* but it is preferrable
 Variables are *containers* of data. Variables *store* data in a memory location. When a variable is declared a memory location is reserved and when it is assigned to a value, the memory space will be filled. To declare a variable we use, *var*, *let* or *const* key word. For a variable which changes at different time we use *let* but if the data doesn't change at all we use *const*. For example PI, country name, gravity.
 ```js
 // Declaring different variables of different data types
-let firstName = "Asabeneh";
-let lastName = "Yetayeh";
-let location = "Helsinki";
-const country = "Finland";
-let age = 100;
+let firstName = "Asabeneh"; // first name of a person
+let lastName = "Yetayeh"; // last name of a person
+let location = "Helsinki";// capital city
+const country = "Finland"; // country
+let age = 100; // age in years
 let isMarried = true;
-const gravity = 9.81;
-const boilingPoint = 100;
-const PI = 3.14;
-console.log(firstName, lastName, location, country, age, gravity, PI);
+console.log(firstName, lastName, location, country, age);//Asabeneh, Yetayeh,Helsinki, Finland,100
+
+// Declaring variables with number values
+const gravity = 9.81; // in m/s2
+const boilingPoint = 100; // temperature in oC
+const PI = 3.14; // geometrical constant
+console.log(gravity, boilingPoint, PI); // 9.81, 100, 3.14
 // Variables can also be declaring in one line
-let name = "Asabeneh",
-  job = "Teacher",
+let name = "Asabeneh", //name of a person
+  job = "teacher", 
   live = "Finland";
   console.log(name, job, live) 
 ```
@@ -113,7 +116,6 @@ Output:
 I am 25 years old.
 You are 30 years old.
 ```
-
 ## Comments
 Commenting in JavaScript is similar to other programming languages. Comments can help to make code more readable.
 There are two ways of commenting:
@@ -163,13 +165,12 @@ let city = 'Helsinki';
 let language = 'JavaScript';
 let job = 'teacher'
 
-let fullName = firstName + " " + lastName; // concatination, merging to string together.
+let fullName = firstName + " " + lastName; // concatination, merging two string together.
 console.log(fullName);
-
 
 let personInfoOne = fullName + ".I am " + age + ". I live in " + country; // ES5
 let personInfoTwo = `I am ${fullName}.I am ${age}. I live in ${country}`; //ES6 - String interpolation method
-let personInfoThree = `I am ${fullName}. I live in ${country}, ${city}. I am a ${job}. I teach ${language}.`
+let personInfoThree = `I am ${fullName}. I live in ${city}, ${country}. I am a ${job}. I teach ${language}.`
 console.log(personInfoOne);
 console.log(personInfoTwo);
 ```
@@ -215,7 +216,6 @@ const PI = 3.14;// constant
 const boilingPoint = 100; // oC, boiling point of water
 var bodyTemp = 37; // oc body temperature
 console.log(age, gravity, mass, PI, boilingPoint,bodyTemp)
-
 ```
 ### Booleans
  Boolean value is either true or false. Any comparisons return a boolean value which is either true or false. 
@@ -223,37 +223,36 @@ console.log(age, gravity, mass, PI, boilingPoint,bodyTemp)
 let isRaining = false
 let hungery = false;
 let isMarried = true;
-
 ```
-#### Exercises:Booleans
+#### Exercise : Booleans
 Boolean value is either true or false. 
 1. Write three JavaScript statement which provide truthy value. 
 1. Write three JavaScript statement which provide falsy value.
 1. Use all the following comparison operators to compare the following values: >, < >=, <=, !=, !==,===. 
-Which are true or which are false ?
-  1. 4 > 3
-  1. 4 >= 3
-  1. 4 < 3
-  1. 4 <= 3
-  1. 4 == 4
-  1. 4 === 4
-  1. 4 != 4
-  1. 4 !== 4
-  1. 4 != '4'
-  1. 4 == '4'
-  1. 4 === '4'
+    Which are true or which are false ?
+      1. 4 > 3
+      1. 4 >= 3
+      1. 4 < 3
+      1. 4 <= 3
+      1. 4 == 4
+      1. 4 === 4
+      1. 4 != 4
+      1. 4 !== 4
+      1. 4 != '4'
+      1. 4 == '4'
+      1. 4 === '4'
 
 ### Undefined
 ```js
 let firstName;
-console.log(firstName); //not defined
+console.log(firstName); //not defined, because it is not assigned to a value yet
 ```
 ### Null
 ```js
 let empty = null;
-console.log(empty); //no value
+console.log(empty); // -> null , means no value
 ```
-#### Exercises:Data types
+#### Exercise : Data types
 String, number, boolean, null, undefined and symbol(ES6) are JavaScript primitive data types.
 - The JavaScript typeof operator uses to check different data types. Check the data type of each variables from question number 1.
 
@@ -303,12 +302,27 @@ let operandTwo = 3;
 Using the above operands apply different JavaScript arithmetic operators
 
 ### Logical Operators
-&& , ||
+The following symbols are the common logical operators:
+&&(ampersand) , ||(pipe) and !(negation).
+&& gets true only if the two operands are true.
+|| gets true either of the operand is true.
+! negates true to false, false to true.
 
 ```js
-const check = 4 > 3 && 10 < 5;
-const check = 4 > 3 || 10 < 5;
-
+//&& ampersand example
+const check = 4 > 3 && 10 > 5; // true and true -> true
+const check = 4 > 3 && 10 < 5; // true and false -> false
+const check = 4 < 3 && 10 < 5; // false and false -> false
+//|| pipe or, example
+const check = 4 > 3 || 10 > 5; // true and true -> true
+const check = 4 > 3 || 10 < 5; // true and false -> true
+const check = 4 < 3 || 10 < 5; // false and false -> false
+//! Negation examples
+let check = 4 > 3 // -> true
+let check = !(4 > 3) // -> false
+let isLightOn = true;
+let isLightOff = !isLightOn; // -> false
+let isMarried = !false; // -> true
 ```
 #### Exercises: Logical Operators
 Which are true or which are false ?
@@ -321,17 +335,17 @@ Which are true or which are false ?
 1. !(false)
 1. !(4 > 3 && 10 < 12)
 1. !(4 > 3 && 10 > 12)
-1. !(4 ===’4’)
+1. !(4 === '4')
 
 ### Comparison Operators
 
 ```js
 4 > 3;
 4 >= 4;
-4< 3
+4 < 3
 4 <= 3
 4 === 4
-4 !=3;
+4 != 3;
 4 !== '4';
 4 !=== '4'
 4 == '4'
@@ -393,7 +407,6 @@ console.log(webTechs[webTechs.length-1]) //--> MongoDB
 console.log(countries);
 console.log(numbers);
 console.log(shoppingCart)
-
 ```
 #### Exercises:Arrays
 1. Declare an array  variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon.
@@ -420,9 +433,7 @@ console.log(modifyArray(["Google", "Facebook","Apple", "Amazon","Microsoft",  "I
 // →["Google", "Facebook","Apple", "Amazon","MICROSOFT",  "IBM"]
 console.log(modifyArray(["Google", "Facebook","Apple", "Amazon"]);
 // →"Not Found"
-
 ```
-
 
 ## Conditionals
 #### If
@@ -438,10 +449,9 @@ if (isRaining) {
 #### If Else
 ```js
 if(condition){
-  // if the condition met
-
+  // if the condition meets
 } else{
- // if condition doesn't met
+ // if condition doesn't meet
 }
 let isRaining = true;
 if (isRaining) {
@@ -518,7 +528,6 @@ Another way to write conditionals is using ternary operators.
 ```js
 let isRaining = true;
 isRaining ?  console.log('You need a rain coat.') : console.log('No need for a rain coat.')
-
 ```
 #### Exercises:Flow Control
 - Get user input using prompt(“Enter your age:”). If user is 18 or older , give feedback:You are old enough to drive but if not 18 give feedback to wait for the years he supposed to wait for.
@@ -587,13 +596,13 @@ do {
 1. Use for loop to iterate from 0 to 100 and print only even numbers
 1. Use for loop to iterate from 0 to 100 and print only odd numbers
 1. Use for loop to iterate from 0 to 100 and print and print the sum of all numbers.
-```js
-The sum all numbers is 5050.
-```
+      ```js
+      The sum all numbers is 5050.
+      ```
 1. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
-```js
-The sum of all evens is 2550. And the sum of all odds is 2500.
-```
+      ```js
+      The sum of all evens is 2550. And the sum of all odds is 2500.
+      ```
 
 ## Functions
 A function is a block of code designed to perform a certain task.
@@ -605,20 +614,41 @@ A function can be declared or created in couple of ways:
 * ***Arrow function***
 ### Function Declaration
 ```js
-
+//function without parameter
 function functionName(){
-  // code goes here
+// code goes here
 }
 functionName() // calling function by its name and with parentheses
 
-    // function without parameters
+//function without parameter
 function addTwoNumbers() {
   var numOne = 10;
   var numTwo = 20;
   var sum = numOne + numTwo;
   console.log(sum);
 }
-addTwoNumbers(); // function has to be called to be executed
+addTwoNumbers(); // function has to be called to be executed by it name
+
+// function with one parameter
+function functionName(parm1){
+  //code goes ther
+}
+functionName(parm1); // during calling or invoking one argument needed
+function areaOfCircle(r){
+  let area = Math.PI * r * r;
+  return area;
+}
+console.log(areaOfCircle(10)) // should be called with one argument
+function square(number) {
+  return number * number;
+}
+console.log(square(10));
+
+// function with two parameters
+function functionName(parm1, parm2){
+  //code goes ther
+}
+functionName(parm1,parm2); // during calling or invoking two arguments needed
 // Function without parater doesn' take input, so lets make a parameter with parameter
 function sumTwoNumbers(numOne, numTwo) {
   var sum = numOne + numTwo;
@@ -637,10 +667,12 @@ function printFullName(firstName, lastName) {
 console.log(printFullName("Asabeneh", "Yetayeh"));
 console.log(printFullName("Dean", "Phan"));
 
-function square(number) {
-  return number * number;
+// function with multiple parameters
+function functionName(parm1, parm2, parm3,...){
+  //code goes ther
 }
-console.log(square(10));
+functionName(parm1,parm2,parm3,...) // during calling or invoking three arguments needed
+
 
 // this function takes array as a parameter and sum up the numbers in the array
 function sumArrayValues(arr) {
@@ -666,10 +698,12 @@ console.log(sumArrayValues(numbers));
 function square (n) {
 return n * n;
 }
+console.log(square(2)) // -> 4
 // Function expression
 const square = function (n){
   return n * n;
 }
+console.log(square(2)) // -> 4
 ```
 ### Anonymous Function
 ```js
@@ -684,8 +718,9 @@ const square = function (n){
 const square = (n) => {
   return n * n 
 }
+console.log(square(2)) // -> 4
 // if we have only one line, it can be written as follows
-const square = n => n * n;
+const square = n => n * n; // -> 4
 
 ```
 ### Arrow Function vs Declaration Function
@@ -704,12 +739,13 @@ const square = n => n * n;
 1. Density of a substance is calculated as follows:*density= mass/volume*.  Write a function which calculates  *density*.
 1. Speed is calculated by dividing the total distance covered by a moving object divided by the total amount of time taken. Write a fucntion which calculates a speed of a moving object, *speed*.
 1. Weight of a substance is calculated as follows: *weight = mass x gravity*. Write a function which calculates  *weight*.
+1. Temperature in 0C can be converted to oF using this formula: *oF = (oC x 9/5) + 32*. Write a function which converst oC to oF  *convertCelciusToFahrenheit*.
 1. Body mass index(BMI) is calculated as follows: *bmi = weight in Kg / (height x height) in m2*. Write a function which calculates  *bmi*. BMI is used to broadly define different weight groups in adults 20 years old or older.Check if a person is *underweight, normal, overweight* or *obsese* based the information given below.
-  - The same groups apply to both men and women.
-  - *Underweight*: BMI is less than 18.5
-  - *Normal weight*: BMI is 18.5 to 24.9
-  - *Overweight*: BMI is 25 to 29.9
-  - *Obese*: BMI is 30 or more
+    - The same groups apply to both men and women.
+    - *Underweight*: BMI is less than 18.5
+    - *Normal weight*: BMI is 18.5 to 24.9
+    - *Overweight*: BMI is 25 to 29.9
+    - *Obese*: BMI is 30 or more
 1. Linear equation is calculated as follows: *ax + b = c*. Write a function which calculates value of a linear equation, *solvLinEquation*.
 1. Quadratic equation is calculated as follows: *ax2 + bx + c = 0*. Write a function which calculates value or values of a quadratic equation, *solvQuadEquation*.
 1. Declare a function name *printArray*. It takes array as a parameter and it prints out each value of thearray.
@@ -721,61 +757,65 @@ const square = n => n * n;
 1. Declare a function name *sumOfOdds*. It takes a number parameter and it adds all the odd numbers in that - range.
 1. Declare a function name *sumOfEven*. It takes a number parameter and it adds all the even numbers in that - range.
 1. Declare a function name evensAndOdds	. It takes a positive integer as parameter and it counts number of evens and odds in the number.
-output:
-```she
-evensAndOdds(100);
-The number of odds are 50.
-The number of evens are 51.
-```
+      output:
+      ```she
+      evensAndOdds(100);
+      The number of odds are 50.
+      The number of evens are 51.
+      ```
 1. Write a funcition which takes any number of arguments and return the sum of the arguments
-```js
-sum(1,2,3) // -> 6
-sum(1,2,3,4) // -> 10
-```
+      ```js
+      sum(1,2,3) // -> 6
+      sum(1,2,3,4) // -> 10
+      ```
 1. Declare a function name *randomHexaNumberGenerator*. When this function is called it generates  a random hexadecimal  number. The function return the hexadecimal number.
-output:
-```she
-console.log(randomHexaNumberGenerator());
- '#ee33df'
-```
+      output:
+      ```she
+      console.log(randomHexaNumberGenerator());
+      '#ee33df'
+      ```
 1. Declare a function name *userIdGenerator*. When this function is called it generates seven character id. The function return the id.
-Output:
-```sh
-console.log(userIdGenerator());
-41XTDbE
-```
+      Output:
+      ```sh
+      console.log(userIdGenerator());
+      41XTDbE
+      ```
 1. Modify question number n . Declare a function name *userIdGeneratedByUser*. It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated. 
-```sh
-userIdGeneratedByUser()
-"kcsy2
-SMFYb
-bWmeq
-ZXOYh
-2Rgxf
-"
-userIdGeneratedByUser()
-"1GCSgPLMaBAVQZ26
-YD7eFwNQKNs7qXaT
-ycArC5yrRupyG00S
-UbGxOFI7UXSWAyKN
-dIV0SSUTgAdKwStr
-"
-```
+      ```sh
+      userIdGeneratedByUser()
+      "kcsy2
+      SMFYb
+      bWmeq
+      ZXOYh
+      2Rgxf
+      "
+      userIdGeneratedByUser()
+      "1GCSgPLMaBAVQZ26
+      YD7eFwNQKNs7qXaT
+      ycArC5yrRupyG00S
+      UbGxOFI7UXSWAyKN
+      dIV0SSUTgAdKwStr
+      "
+      ```
 1. Write a function name *rgbColorGenerator* and it generates rgb colors.
-Output:
-```sh
-rgb(125,244,255)
-```
+      Output:
+      ```sh
+      rgb(125,244,255)
+      ```
 1. Write a function name *displayDateTime*  and it display in this format: 28/08/2018 04:08
-1. Use the new Date() object to get month, date, year, hour and minute.
-Output:
-```sh
-28/08/2018 04:08
-```
+1. Use the new Date() object to get *month, date, year, hour* and *minute*.
+      Output:
+      ```sh
+      28/08/2018 04:08
+      ```
+ 1. Call your function *shuffleArray*, it takes an array as a parameter and it returns a shuffled array
+ 1. Call your function *factorial*, it takes a whole number as a parameter and it return a factorial of the number
+ 1. Call your function *isEmpty*, it takes a parameter and it checks if it is empty or not
+ 1. Call your function *sum*, it takes any number of arguments and it returns the sum.
+
 ## Object
 Everything can be an object and objects do have properties and properties have values.
 ```js
-
 const person = {
   firstName:'Asabeneh',
   lastName:'Yetayeh',
