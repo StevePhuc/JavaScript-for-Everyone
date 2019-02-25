@@ -13,16 +13,15 @@
 10. [Scope](#scope)
 11. [Hoisting](#Hoisting)
 12. [Object](#object)
-13. [Class](#class)
-14. [Document Object Model](#document-object-model)
-15. [Functional Programming](#functional-programming)
-16. [Call Back and Higher Order Functions](#call-back-and-higher-order-functions)
+13. [Document Object Model](#document-object-model)
+14. [Class](#class)
+15. [Call Back and Higher Order Functions](#call-back-and-higher-order-functions)
+16. [Functional Programming](#functional-programming)
 17. [Destructuring](#destructuring)
-19. [Rest and Spread](#rest-and-spread)
-20. [Document Object Model](#document-object-model)
-21. [Regular Expressions](#regular-expressions)
-22. [Local Storage](#local-storage)
-23. [Cookies](#cookies)
+18. [Rest and Spread](#rest-and-spread)
+19. [Regular Expressions](#regular-expressions)
+20. [Local Storage](#local-storage)
+21. [Cookies](#cookies)
 
 ## Introduction
 Welcome to JavaScript. ***Congratulations*** for deciding to learn JavaScript.
@@ -94,28 +93,30 @@ let location = "Helsinki";// capital city
 const country = "Finland"; // country
 let age = 100; // age in years
 let isMarried = true;
-console.log(firstName, lastName, location, country, age);//Asabeneh, Yetayeh,Helsinki, Finland,100
+console.log(firstName, lastName, location, country, age);//Asabeneh, Yetayeh, Helsinki, Finland, 100
 
 // Declaring variables with number values
-const gravity = 9.81; // in m/s2
-const boilingPoint = 100; // temperature in oC
+const gravity = 9.81; // earth gravity  in m/s2
+const boilingPoint = 100; // water boiling point, temperature in oC
 const PI = 3.14; // geometrical constant
 console.log(gravity, boilingPoint, PI); // 9.81, 100, 3.14
-// Variables can also be declaring in one line
+// Variables can also be declaring in one line separated by comma
 let name = "Asabeneh", //name of a person
   job = "teacher", 
   live = "Finland";
   console.log(name, job, live) 
 ```
 #### Exercise - 1 : Variables
+1. Declare variables without assigning values
+1. Declare variables with assigning values
 1. Declare variables to store your first name, last name,  marital status, country and age in multiple lines
 1. Declare variables to store your first name, last name,  marital status, country and age in a single line
 1. Declare two variables *myAge* and *yourAge* and assign them initial values and log to browser console. 
-Output:
-```sh
-I am 25 years old.
-You are 30 years old.
-```
+      Output:
+      ```sh
+      I am 25 years old.
+      You are 30 years old.
+      ```
 ## Comments
 Commenting in JavaScript is similar to other programming languages. Comments can help to make code more readable.
 There are two ways of commenting:
@@ -142,18 +143,19 @@ Multiline commenting:
 ## Data Types
 In JavaScript and also other programming languages there are different kinds of data types. The following are JavaScript primitive data types:*String, Number, Boolean, undefined, Null* and *Symbol*.
 #### Exercises - 3 : Data Types
+1. Declare variables and assign string, boolean, undefined and null data types
 1. The JavaScript typeof operator uses to check different data types. Check the data type of each variables from question number 1.
 
 ### Strings
 Strings are text which are under ***single*** or ***double*** quote.
 Lets' see some examples of string:
-```js
-let firstName = 'Asabeneh';
-let lastName = 'Yetayeh';
-let country = 'Finland';
-let city = 'Helsinki';
-let language = 'JavaScript';
-let job = 'teacher'
+  ```js
+  let firstName = 'Asabeneh';
+  let lastName = 'Yetayeh';
+  let country = 'Finland';
+  let city = 'Helsinki';
+  let language = 'JavaScript';
+  let job = 'teacher'
 ```
 #### String Concatination
 ```js
@@ -174,7 +176,7 @@ let personInfoThree = `I am ${fullName}. I live in ${city}, ${country}. I am a $
 console.log(personInfoOne);
 console.log(personInfoTwo);
 ```
-#### Exercise - 3 : String
+#### Exercise - 4 : String
 1. Declare a variable name company and assign it to an initial value **"Coding Academy"**.
 1. Print the string  on the browser console using *console.log()*
 1. Print the *length* of the string  on the browser console using *console.log()*
@@ -208,23 +210,25 @@ Numbers are integers and decimal values which can do all the arithemtic operatio
 Lets' see some examples of Numbers
 ```js
 let age = 35;
-let gravity = 9.81; // m/s2
-let mass = 72 // keg
-const PI = 3.14;// constant
+const gravity = 9.81; //graviational constant in  m/s2
+let mass = 72 // mass in Killogram
+const PI = 3.14;// pi a geometrical constant
 
 //More Examples
-const boilingPoint = 100; // oC, boiling point of water
-var bodyTemp = 37; // oc body temperature
-console.log(age, gravity, mass, PI, boilingPoint,bodyTemp)
+const boilingPoint = 100; // temperature in oC, boiling point of water which is a constant
+const bodyTemp = 37; // oc aveage human body temperature, which is a constant
+console.log(age, gravity, mass, PI, boilingPoint, bodyTemp)
 ```
 ### Booleans
  Boolean value is either true or false. Any comparisons return a boolean value which is either true or false. 
 ```js
+let isLightOn = true;
 let isRaining = false
 let hungery = false;
 let isMarried = true;
+
 ```
-#### Exercise : Booleans
+#### Exercise - 5 : Booleans
 Boolean value is either true or false. 
 1. Write three JavaScript statement which provide truthy value. 
 1. Write three JavaScript statement which provide falsy value.
@@ -252,9 +256,9 @@ console.log(firstName); //not defined, because it is not assigned to a value yet
 let empty = null;
 console.log(empty); // -> null , means no value
 ```
-#### Exercise : Data types
+#### Exercise - 6 : Data types
 String, number, boolean, null, undefined and symbol(ES6) are JavaScript primitive data types.
-- The JavaScript typeof operator uses to check different data types. Check the data type of each variables from question number 1.
+1. The JavaScript typeof operator uses to check different data types. Check the data type of each variables from question number 1.
 
 ## Operators
 ### Arthimetic Operators
@@ -293,7 +297,7 @@ console.log(weigth) // -> 706.32 N(Newton)
 console.log(`The boiling point of water is ${boilingPoint} oC.\nHuman body temperatue is ${body} oC.\nThe gravity of earth is ${gravity} m / s2.`
 );
 ```
-#### Exercises:Arthimetic Operators:
+#### Exercises : Arthimetic Operators:
 JavaScript arithmetic operators are addition(+), subtraction(-), multiplication(*), division(/), modulus(%), increment(++) and decrement(--).
 ```js
 let operandOne = 4;
@@ -344,14 +348,13 @@ Which are true or which are false ?
 4 >= 4;
 4 < 3
 4 <= 3
-4 === 4
 4 != 3;
 4 !== '4';
-4 !=== '4'
 4 == '4'
 4 === '4'
+4 === 4
 ```
-#### Exercises:Comparison Operators
+#### Exercise - 7 : Comparison Operators
 Boolean value is either true or false. Any comparison return a boolean either true or false. 
 Use all the following comparison operators to compare the following values: >, < >=, <=, !=, !==,===. 
 Which are true or which are false ?
@@ -366,81 +369,13 @@ Which are true or which are false ?
 1. 4 != '4'
 1. 4 == '4'
 1. 4 === '4'
-
-## Arrays
-In contrast to variables array can store *multiple values*. Each value in an array has an *index* and each index has *a reference in a memory address*. Each value can be accessed by using their *indexes*. The index of an array starts from *zero* and the last element is less by one from the lenght of the array.
-```js
-const webTechs = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "Redux",
-  "Node",
-  "MongoDB"
-];
-const countries = [
-  "Albania",
-  "Bolivia",
-  "Canada",
-  "Denmark",
-  "Ethiopia",
-  "Finland",
-  "Germany",
-  "Hungary"
-];
-const numbers = [0, 3.14, 9.81, 37, 98.6, 100];
-const shoppingCart = [
-  "Milk",
-  "Mango",
-  "Tomato",
-  "Potato",
-  "Avocado",
-  "Meat",
-  "Eggs",
-  "Sugar"
-];
-console.log(webTechs);
-console.log(webTechs.length) // => to know the size of the array, which is 7
-console.log(webTechs[0]) //--> HTML;
-console.log(webTechs[webTechs.length-1]) //--> MongoDB
-console.log(countries);
-console.log(numbers);
-console.log(shoppingCart)
-```
-#### Exercises:Arrays
-1. Declare an array  variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon.
-1. Print the array using *console.log()*
-1. Print the number of companies in the array
-1. Print out each company
-1. Change companies to uppercase and print them out
-1. Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies.
-1. Sort the array using *sort()* method
-1. Reverse the array using *reverse()* method
-1. Slice out the first 3 companies from the array
-1. Slice out the last 3 companies from the array
-1. Slice out the middle IT company or companies from the array
-1. Remove the first IT company from the array
-1. Remove the middle IT company or companies from the array
-1. Remove the last IT company from the array
-1. Remove all IT companies
-## More on Arrays
-Write a function called *modifyArray* takes array as parameter and modifies the fifth item of the array and returns the array. If the array length is less than five it return ‘item not found’.
-```js
-console.log(modifyArray(["Avocado", "Tomato", "Potato","Mango", "Lemon","Carrot"]);
-// →["Avocado", "Tomato", "Potato","Mango", "LEMON", "Carrot"]
-console.log(modifyArray(["Google", "Facebook","Apple", "Amazon","Microsoft",  "IBM"]);
-// →["Google", "Facebook","Apple", "Amazon","MICROSOFT",  "IBM"]
-console.log(modifyArray(["Google", "Facebook","Apple", "Amazon"]);
-// →"Not Found"
-```
-
 ## Conditionals
 #### If
 ```js
 if(condition){
   //code goes here
 }
+
 let isRaining = true;
 if (isRaining) {
   console.log("Remember to take your rain coat.");
@@ -529,36 +464,45 @@ Another way to write conditionals is using ternary operators.
 let isRaining = true;
 isRaining ?  console.log('You need a rain coat.') : console.log('No need for a rain coat.')
 ```
-#### Exercises:Flow Control
-- Get user input using prompt(“Enter your age:”). If user is 18 or older , give feedback:You are old enough to drive but if not 18 give feedback to wait for the years he supposed to wait for.
+#### Exercise - 8 : Conditionals
+1. Get user input using prompt(“Enter your age:”). If user is 18 or older , give feedback:You are old enough to drive but if not 18 give feedback to wait for the years he supposed to wait for.
+      Output:
+      ```sh
+      Enter your age: 30
+      You are old enough to drive. 
+      ```
+      Output:
+      ```sh
+      Enter your age:15
+      You are left with 3 years to drive.
+      ``` 	
+1. Compare the values of myAge and yourAge using if … else. Based on the comparison log   to console who is older (me or you). Use prompt(“Enter your age:”) to get the age as input.
+      Output:
+      ```sh
+      Enter your age: 30
+      You are 5 years older than me. 
+      ```
+1. If a is greater than b return a is greater than b else a is less than b.
 Output:
-```sh
-Enter your age: 30
-You are old enough to drive. 
-```
-
-Output:
-```sh
-Enter your age:15
-You are left with 3 years to drive.
-``` 	
-- Compare the values of myAge and yourAge using if … else. Based on the comparison log   to console who is older (me or you). Use prompt(“Enter your age:”) to get the age as input.
-Output:
-```sh
-Enter your age: 30
-You are 5 years older than me. 
-```
-```sh
-let a = 4;
-let b = 3;
-```
-- If a is greater than b return a is greater than b else a is less than b.
-Output:
-```sh
-4 is greater than 3
-```
+      ```sh
+      let a = 4;
+      let b = 3;
+      4 is greater than 3
+      ```
+1. Write a code which give grade students according to theirs scores:
+    * 80-100, A
+    * 70-89, B
+    * 60-69, C
+    * 50-59, D
+    * 0 -49, F
+1. Check if the season is Autumn, Winter, Spring or Summer. 
+ If the user input is:
+    * September, October or November, the season is Autumn.
+    * December, January or February, the season is Winter.
+    * March, April or May, the season is Spring
+    * June, July or August, the season is Summer
 ## Loops
-In programming languages to carry out repetitive tast we use different kinds of loop. The following examples are the commonly used loops.
+In programming languages to carry out repetitive task we use different kinds of loop. The following examples are the commonly used loops.
 ### For Loop
 ```js
 //For loop structure
@@ -603,15 +547,105 @@ do {
       ```js
       The sum of all evens is 2550. And the sum of all odds is 2500.
       ```
+## Arrays
+In contrast to variables array can store *multiple values*. Each value in an array has an *index* and each index has *a reference in a memory address*. Each value can be accessed by using their *indexes*. The index of an array starts from *zero* and the last element is less by one from the lenght of the array.
+```js
+const numbers = [0, 3.14, 9.81, 37, 98.6, 100]; // set of numbers
+console.log(numbers.length) // => to know the size of the array, which is 6
+console.log(numbers) // -> [0, 3.14, 9.81, 37, 98.6, 100]
+console.log(numbers[0]) //  -> 0
+console.log(numbers[5]) //  -> 100
+let lastIdex = numbers.length - 1;
+console.log(numbers[lastIndex]) -> 100
+const webTechs = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB"
+]; // List of web technologies
+console.log(webTechs) // all the array items
+console.log(webTechs.length) // => to know the size of the array, which is 7
+console.log(webTechs[0]) //  -> HTML
+console.log(webTechs[6]) //  -> MongoDB
+let lastIdex = webTechs.length - 1;
+console.log(webTechs[lastIndex]) -> MongoDB
+const countries = [
+  "Albania",
+  "Bolivia",
+  "Canada",
+  "Denmark",
+  "Ethiopia",
+  "Finland",
+  "Germany",
+  "Hungary",
+  "Ireland",
+  "Japan"
+  "Kenya"
+]; // List of countries;
+console.log(countries) // -> all countries in array
+console.log(countries[0]) //  -> Albania
+console.log(countries[10]) //  -> Kenya
+let lastIdex = countries.length - 1;
+console.log(countries[lastIndex]) -> // Kenya
+
+const shoppingCart = [
+  "Milk",
+  "Mango",
+  "Tomato",
+  "Potato",
+  "Avocado",
+  "Meat",
+  "Eggs",
+  "Sugar"
+]; // List of food products
+console.log(shoppingCart) // -> all shoppingCart in array
+console.log(shoppingCart[0]) //  -> Milk
+console.log(shoppingCart[7]) //  -> Sugar
+let lastIdex = shoppingCart.length - 1;
+console.log(shoppingCart[lastIndex]) -> // Sugar
+```
+#### Exercise - 9 : Arrays
+1. Declare an *empty* array;
+1. Declare an array with more than 5 number of items
+1. Find the length of your array
+1. Get the first item, the middle item and the last item of the array
+1. Declare an array called *mixedDataTypes*,put different data types and in your array and the array size should be greater than 5
+1. Declare an array  variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon.
+1. Print the array using *console.log()*
+1. Print the number of companies in the array
+1. Print the first company, middle and last company
+1. Print out each company
+1. Change companies to uppercase and print them out
+1. Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies.
+1. Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is *not found*.
+1. Filter out companies which have more than one 'o' without the filter method
+1. Sort the array using *sort()* method
+1. Reverse the array without *reverse* method
+1. Reverse the array using *reverse()* method
+1. Slice out the first 3 companies from the array
+1. Slice out the last 3 companies from the array
+1. Slice out the middle IT company or companies from the array
+1. Remove the first IT company from the array
+1. Remove the middle IT company or companies from the array
+1. Remove the last IT company from the array
+1. Remove all IT companies
+
+## More on Arrays
+coming---
+---
+#### Exercise -10 : Array Methods
 
 ## Functions
 A function is a block of code designed to perform a certain task.
 A function is declared by a function key word followed by a name, followed by parentheses (). A parentheses can take a parameter. If a function take a parameter it will be called with argument. A function can also take a default paramenter.
 A function can be declared or created in couple of ways:
-* ***Decleration function**
-* ***Expression function**
-* ***Anonymous function***
-* ***Arrow function***
+* *Decleration function*
+* *Expression function*
+* *Anonymous function*
+* *Arrow function*
 ### Function Declaration
 ```js
 //function without parameter
@@ -727,7 +761,7 @@ const square = n => n * n; // -> 4
 ```js
 ```
 
-#### Exercises:Functions
+#### Exercise - 10 : Functions
 1. Declare a function *fullName* and it print out your full name.
 1. Declare a function *fullName* and now it takes firstName, lastName as a parameter and it returns your full - name.
 1. Declare a function *addNumbers* and it takes two two parameters and it returns sum.
@@ -739,15 +773,16 @@ const square = n => n * n; // -> 4
 1. Density of a substance is calculated as follows:*density= mass/volume*.  Write a function which calculates  *density*.
 1. Speed is calculated by dividing the total distance covered by a moving object divided by the total amount of time taken. Write a fucntion which calculates a speed of a moving object, *speed*.
 1. Weight of a substance is calculated as follows: *weight = mass x gravity*. Write a function which calculates  *weight*.
-1. Temperature in 0C can be converted to oF using this formula: *oF = (oC x 9/5) + 32*. Write a function which converst oC to oF  *convertCelciusToFahrenheit*.
+1. Temperature in oC can be converted to oF using this formula: *oF = (oC x 9/5) + 32*. Write a function which converst oC to oF  *convertCelciusToFahrenheit*.
 1. Body mass index(BMI) is calculated as follows: *bmi = weight in Kg / (height x height) in m2*. Write a function which calculates  *bmi*. BMI is used to broadly define different weight groups in adults 20 years old or older.Check if a person is *underweight, normal, overweight* or *obsese* based the information given below.
     - The same groups apply to both men and women.
     - *Underweight*: BMI is less than 18.5
     - *Normal weight*: BMI is 18.5 to 24.9
     - *Overweight*: BMI is 25 to 29.9
     - *Obese*: BMI is 30 or more
-1. Linear equation is calculated as follows: *ax + b = c*. Write a function which calculates value of a linear equation, *solvLinEquation*.
-1. Quadratic equation is calculated as follows: *ax2 + bx + c = 0*. Write a function which calculates value or values of a quadratic equation, *solvQuadEquation*.
+1. Write a function called *checkSeason*, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
+1. Linear equation is calculated as follows: *ax + b = c*. Write a function which calculates value of a linear equation, *solveLinEquation*.
+1. Quadratic equation is calculated as follows: *ax2 + bx + c = 0*. Write a function which calculates value or values of a quadratic equation, *solveQuadEquation*.
 1. Declare a function name *printArray*. It takes array as a parameter and it prints out each value of thearray.
 1. Declare a function name *reverseArray*. It takes array as a parameter and it returns the reverse of the array (dont’ use method).
 1. Declare a function name *capitalizeArray*. It takes array as a parameter and it returns  the - capitalizedarray. 
@@ -757,7 +792,6 @@ const square = n => n * n; // -> 4
 1. Declare a function name *sumOfOdds*. It takes a number parameter and it adds all the odd numbers in that - range.
 1. Declare a function name *sumOfEven*. It takes a number parameter and it adds all the even numbers in that - range.
 1. Declare a function name evensAndOdds	. It takes a positive integer as parameter and it counts number of evens and odds in the number.
-      output:
       ```she
       evensAndOdds(100);
       The number of odds are 50.
@@ -769,13 +803,11 @@ const square = n => n * n; // -> 4
       sum(1,2,3,4) // -> 10
       ```
 1. Declare a function name *randomHexaNumberGenerator*. When this function is called it generates  a random hexadecimal  number. The function return the hexadecimal number.
-      output:
       ```she
       console.log(randomHexaNumberGenerator());
       '#ee33df'
       ```
 1. Declare a function name *userIdGenerator*. When this function is called it generates seven character id. The function return the id.
-      Output:
       ```sh
       console.log(userIdGenerator());
       41XTDbE
@@ -798,20 +830,31 @@ const square = n => n * n; // -> 4
       "
       ```
 1. Write a function name *rgbColorGenerator* and it generates rgb colors.
-      Output:
       ```sh
+      rgbColorGenerator()
       rgb(125,244,255)
       ```
-1. Write a function name *displayDateTime*  and it display in this format: 28/08/2018 04:08
 1. Use the new Date() object to get *month, date, year, hour* and *minute*.
-      Output:
+1. Write a function name *displayDateTime*  which display time in this format: 28/08/2018 04:08
       ```sh
+      displayDateTime()
       28/08/2018 04:08
       ```
  1. Call your function *shuffleArray*, it takes an array as a parameter and it returns a shuffled array
  1. Call your function *factorial*, it takes a whole number as a parameter and it return a factorial of the number
  1. Call your function *isEmpty*, it takes a parameter and it checks if it is empty or not
  1. Call your function *sum*, it takes any number of arguments and it returns the sum.
+ 1. Write a function called *sumOfArrayItems*, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+ 1. Write a function called *average*, it takes an array parameter and returns the average the items. Check if all the array items are number types. If not give return reasonable feedback.
+ 1. Write a function called *modifyArray* takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+      ```js
+      console.log(modifyArray(["Avocado", "Tomato", "Potato","Mango", "Lemon","Carrot"]);
+      // →["Avocado", "Tomato", "Potato","Mango", "LEMON", "Carrot"]
+      console.log(modifyArray(["Google", "Facebook","Apple", "Amazon","Microsoft",  "IBM"]);
+      // →["Google", "Facebook","Apple", "Amazon","MICROSOFT",  "IBM"]
+      console.log(modifyArray(["Google", "Facebook","Apple", "Amazon"]);
+      // →"Not Found"
+      ```
 
 ## Object
 Everything can be an object and objects do have properties and properties have values.
@@ -831,58 +874,22 @@ person.live = 'Finland';
 
 ```
 #### Exercises:Objects
-- Create an object literal called *personAccount*. It has *firstName, lastName, incomes, expenses* properties and it has *totalIncomes, totalExpenses, acountInfo,addIncome, addExpence* and *accountBalance* methods. Incomes is a set of incomes and its description and the same for expenses. 
-
-## Class
-```js
-class Person {
-  constructor(firstName, lastName, age, location,skills){
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.location = location;
-    this.skills = skills;
-  }
-  getFull () {
-    return `${this.firstName} ${this.lastName}`
-  }
-}
-```
-#### Exercises:Classes
-## localStorage
-Local storage is used to store data on the browser.
-```js
-let skills = [
-  {teck:'HTML',level:10},
-  {tech:'CSS', level:9},
-  {tech:'JS',level:8},
-  {tech:'React', level:9},
-  {tech:'Redux',level:10},
-  {tech:'Node',level:8},
-  {tech:'MongoDB',level:8}
-  ]
-
-let skillJSON = JSON.stringify(skills)
-localStorage.setItem('skills',skillJSON);
-let skillsObj = JSON.parse(localStorage.getItem('skills'),undefined, 4)
-console.log(skillsObj)
-localStorage.clear()
-```
-## Exercises:Local Storage
-## Cookies
-#### Exercises:Cookies
+1. Create an object literal called *personAccount*. It has *firstName, lastName, incomes, expenses* properties and it has *totalIncomes, totalExpenses, acountInfo,addIncome, addExpence* and *accountBalance* methods. Incomes is a set of incomes and its description and the same for expenses.
+2. Develop a small JavaScript library. 
 ## Document Object Model
-HTML document is structured as a JavaScript Object. Every HTML element has a different properties which can help to manipulate it. It is possible get, create, append or remove HTML elements using JavaScript. Check the examples below.
+HTML document is structured as a JavaScript Object. Every HTML element has a different properties which can help to manipulate it. It is possible get, create, append or remove HTML elements using JavaScript. Check the examples below. Selecting HTML element using JavaScript is similar to select CSS. To select an HTML element, we use tag name, id, class name. To create an HTML element we use tag name.
 
 ### Getting Element
 ```js
-let allTitle = document.getElementsByTagName('h1');
-let allTitle = document.getElementsByClassName('title');
+let allTitles = document.getElementsByTagName('h1');
+let allTitles = document.getElementsByClassName('title');
 let firstTitle = document.getElementById('first-title');
-let allDiv = document.querySelectorAll('div');
+
+let firstTitle = document.querySelect('h1');
+let allDivs = document.querySelectorAll('div');
 let span = document.querySelector('span');
 let firstPara = document.querySelector('#first-para');
-let allPara = document.querySelector('.para');
+let allParas = document.querySelectorAll('.para');
 
 ```
 ### Creating Element
@@ -934,6 +941,46 @@ button.addEventListener('click', (e) => {
 ```
 #### Exercises:Document Object Model
 
+## Class
+```js
+class Person {
+  constructor(firstName, lastName, age, location,skills){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.location = location;
+    this.skills = skills;
+  }
+  getFull () {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+```
+#### Exercises:Classes
+## localStorage
+Local storage is used to store data on the browser.
+```js
+let skills = [
+  {teck:'HTML',level:10},
+  {tech:'CSS', level:9},
+  {tech:'JS',level:8},
+  {tech:'React', level:9},
+  {tech:'Redux',level:10},
+  {tech:'Node',level:8},
+  {tech:'MongoDB',level:8}
+  ]
+
+let skillJSON = JSON.stringify(skills)
+localStorage.setItem('skills',skillJSON);
+let skillsObj = JSON.parse(localStorage.getItem('skills'),undefined, 4)
+console.log(skillsObj)
+localStorage.clear()
+```
+## Exercises:Local Storage
+## Cookies
+#### Exercises:Cookies
+
+
 ## Regular Expressions
 ```js
 let pattern  = /[A-Z][a-z]{3,12}/
@@ -944,6 +991,7 @@ pattern.test(name)
 #### Exercises:Regular Expressions
 - Calculate the total annual income of the person from the following text. ‘He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro online courses per month.’
 ## Functional Programming
+*any, every, find, filter, map, reduce ,some*
 - Declare a function called getStringLists which takes an array as a parameter  and then returns an array only with string items.
 - Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array from slack).
 - Declare a getFirstTenCountries function and return an array of ten countries
