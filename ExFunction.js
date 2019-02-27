@@ -23,11 +23,14 @@ printArray(["Phuc", "Nguyen", "Integrify"]);
 
 //  Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array(dont’ use method).
 function reverseArray(array) {
+    let reverse = [];
     for (let index = array.length - 1; index >= 0; index--) {
-        console.log(array[index]);
+        reverse.push(array[index]);
     }
+    return reverse;
 }
-reverseArray(["Phuc", "Nguyen", "Integrify"]);
+console.log(reverseArray(["Phuc", "Nguyen", "Integrify"]));
+
 //  Declare a function name capitalizeArray. It takes array as a parameter and it returns  the capitalized array.
 function capitalizeArray(array) {
     array.forEach(currentItem => {
@@ -220,7 +223,7 @@ function shuffleArray(array) {
     return shuffledArray;
 }
 
-console.log("shuffled array: " + shuffleArray([1, 2, 3, 4, 5]));
+console.log("shuffled array: " + shuffleArray([1, 2, 3, 4, 5, 6, 7]));
 
 // 	r. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 function factorial(number) {
@@ -250,3 +253,9 @@ function sum(...params) {
     return sum;
 }
 console.log(sum(1, 2, 3, 4));
+
+function name() {
+    return "Phuc";
+    console.log("test"); //not run after return
+}
+console.log(name());
