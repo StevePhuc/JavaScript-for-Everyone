@@ -287,30 +287,3 @@ function sevenRandomNumbers() {
 
 sevenRandomNumbers();
 // [1,4,5,7,9,8,0]
-
-// https://www.codewars.com/kata/5412509bd436bd33920011bc/train/javascript
-// return masked string
-
-// function maskify(cc) {
-//   console.log(cc);
-//   const arrayCC = cc.split('');
-//   const arrayCCLength = arrayCC.length;
-//   if (arrayCC.length > 4) {
-//     const last4 = arrayCC.splice(arrayCCLength - 4).join('');
-//     return '#'.repeat(arrayCCLength - 4) + last4;
-//   }
-//   return cc;
-// }
-
-// return masked string
-function maskify(cc) {
-  return cc.replace(/.(?=....)/g, '#');
-}
-
-maskify('4556364607935616');
-// maskify('1');
-// maskify('');
-// maskify('Skippy');
-// maskify('Nananananananananananananananana Batman!');
-
-// https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/javascript
