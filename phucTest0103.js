@@ -216,6 +216,11 @@ console.log(todoList);
 
 function checkUniqueness(arr) {
   for (let i = 0; i < arr.length; i++) {
+    // for (let j = i; j < arr.length; j++) {
+    //   if (arr[i] === arr[j + 1]) {
+    //     return false;
+    //   }
+    // }
     if (arr.includes(arr[i], i + 1)) {
       return false;
     }
@@ -223,10 +228,10 @@ function checkUniqueness(arr) {
   return true;
 }
 
-const arrOne = [1, 4, 6, 2, 1];
+const arrOne = [-1, 4, 6, -1, -2];
 console.log(checkUniqueness(arrOne));
 
-const arrTwo = [1, 4, 6, 2, 3];
+const arrTwo = ['Hari', 4, 'Hari', 2, 3];
 console.log(checkUniqueness(arrTwo));
 
 // 11.
@@ -305,6 +310,8 @@ console.log(users);
 function addUserSkill(userName, skillAdd) {
   const checkUser = users.filter(userItem => userItem.name === userName);
   if (checkUser.length === 1) {
+    console.log(checkUser);
+
     checkUser[0].skills.push(skillAdd);
   }
 }
@@ -328,3 +335,43 @@ editUser({
   age: 29,
 });
 console.log(users);
+
+// random date between two dates
+
+function randomDate(start, end, startHour, endHour) {
+  const date = new Date(+start + Math.random() * (end - start));
+  const hour = (startHour + Math.random() * (endHour - startHour)) | 0;
+  date.setHours(hour);
+  return date;
+}
+// function randomDate(start, end) {
+//   const date = new Date(+start + Math.random() * (end - start));
+//   const hour = (startHour + Math.random() * (endHour - startHour)) | 0;
+//   date.setHours(hour);
+//   return date;
+// }
+
+// console.log(randomDate('12/13/2013', '12/13/2018', 1, 23));
+
+function randomDate(start, end) {
+  const date = new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  );
+  return date
+    .toISOString()
+    .slice(2, 10)
+    .replace(/-/g, '')
+    .match(/../g)
+    .reverse()
+    .join('');
+}
+const date = randomDate(new Date(1900, 0, 1), new Date(1999, 31, 12));
+console.log(date);
+
+// console.log(
+//   date.toLocaleDateString('en-GB', {
+//     day: 'numeric',
+//     month: 'numeric',
+//     year: 'numeric',
+//   })
+// );
