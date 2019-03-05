@@ -91,26 +91,29 @@ console.log(genCarPlateNum());
 // 7
 // Write a function which can generate  a random Finnish social security number.
 // https://en.wikipedia.org/wiki/National_identification_number#Finland
+
+function randomDate(start, end) {
+  const newDate = new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  );
+  return newDate
+    .toISOString()
+    .slice(2, 10)
+    .replace(/-/g, '')
+    .match(/../g)
+    .reverse()
+    .join('');
+}
+const date = randomDate(new Date(1900, 0, 1), new Date(1999, 11, 31));
+console.log(date);
+
 function genSocialSecurityNum() {
   let SocialSecurityNum = '';
 
   // random day
-  let randomNum = Math.floor(Math.random() * 31 + 1);
-  if (randomNum < 10) {
-    randomNum = `0${randomNum}`;
-  }
-  SocialSecurityNum = randomNum;
-  //  random month
-  randomNum = Math.floor(Math.random() * 12 + 1);
-  if (randomNum < 10) {
-    randomNum = `0${randomNum}`;
-  }
-  SocialSecurityNum += `${randomNum}`;
-  //  random years
-  randomNum = Math.floor(Math.random() * 99 + 1);
-  if (randomNum < 10) {
-    randomNum = `0${randomNum}`;
-  }
+  let randomNum = randomDate(new Date(1900, 0, 1), new Date(1999, 31, 12));
+  console.log(randomNum);
+
   // for easy only random who born 1900-1999 so "1900-1999: −"
   SocialSecurityNum += `${randomNum}-`;
   // random id who born same day
@@ -338,12 +341,12 @@ console.log(users);
 
 // random date between two dates
 
-function randomDate(start, end, startHour, endHour) {
-  const date = new Date(+start + Math.random() * (end - start));
-  const hour = (startHour + Math.random() * (endHour - startHour)) | 0;
-  date.setHours(hour);
-  return date;
-}
+// function randomDate(start, end, startHour, endHour) {
+//   const date = new Date(+start + Math.random() * (end - start));
+//   const hour = (startHour + Math.random() * (endHour - startHour)) | 0;
+//   date.setHours(hour);
+//   return date;
+// }
 // function randomDate(start, end) {
 //   const date = new Date(+start + Math.random() * (end - start));
 //   const hour = (startHour + Math.random() * (endHour - startHour)) | 0;
@@ -352,21 +355,6 @@ function randomDate(start, end, startHour, endHour) {
 // }
 
 // console.log(randomDate('12/13/2013', '12/13/2018', 1, 23));
-
-function randomDate(start, end) {
-  const date = new Date(
-    start.getTime() + Math.random() * (end.getTime() - start.getTime())
-  );
-  return date
-    .toISOString()
-    .slice(2, 10)
-    .replace(/-/g, '')
-    .match(/../g)
-    .reverse()
-    .join('');
-}
-const date = randomDate(new Date(1900, 0, 1), new Date(1999, 31, 12));
-console.log(date);
 
 // console.log(
 //   date.toLocaleDateString('en-GB', {
